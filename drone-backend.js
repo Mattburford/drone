@@ -32,8 +32,8 @@ function fly(robot) {
     bot.nav.on("altitudeChange", function (data) {
         console.log("Altitude:", data);
         // Drone is higher than 1.5 meters up
-       // if (data > 1.5) {
-       //     bot.drone.land();
+        // if (data > 1.5) {
+        //     bot.drone.land();
         //}
     });
     bot.nav.on("batteryChange", function (data) {
@@ -51,14 +51,20 @@ function fly(robot) {
     after(6 * 1000, function () {
         bot.drone.left(0.05)
     });
-    after(10 * 1000, function () {
+    after(8 * 1000, function () {
+        bot.drone.back(0.07)
+    });
+
+    after(9 * 1000, function () {
         bot.drone.land();
     });
 
-    after(15 * 1000, function () {
+    after(12 * 1000, function () {
         bot.drone.stop();
     });
 //jdk
 }
 
 Cylon.start();
+
+
